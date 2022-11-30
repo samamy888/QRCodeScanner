@@ -1,10 +1,11 @@
 <div style="width: 500px" id="reader"></div>
+<div id="result"></div>
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <script>
     function onScanSuccess(decodedText, decodedResult) {
         // Handle on success condition with the decoded text or result.
         console.log(`Scan result: ${decodedText}`, decodedResult);
-        alert(errorMessage);
+        document.getElementById("result").append(decodedText)
     }
 
     var html5QrcodeScanner = new Html5QrcodeScanner(
